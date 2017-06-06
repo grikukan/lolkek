@@ -6,8 +6,18 @@
 #define COMPILER_NODEDECLSPECS_H
 
 
-class NodeDeclSpecs {
+#include <vector>
+#include "NodeStorageClassSpec.h"
+#include "NodeTypeSpec.h"
+#include "NodeTypeQualifier.h"
+#include "ParserState.h"
 
+class NodeDeclSpecs {
+    std::vector<NodeStorageClassSpec*> storage_class_spec;
+    std::vector<NodeTypeSpec*> type_spec;
+    std::vector<NodeTypeQualifier*> type_qualifier;
+public:
+    friend NodeDeclSpecs *parseNodeDeclSpecs(ParserState &state);
 };
 
 
