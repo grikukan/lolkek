@@ -1,0 +1,14 @@
+//
+// Created by gritukan on 6/6/17.
+//
+
+#ifndef COMPILER_NODESTRUCTDECLARATORLIST_H
+#define COMPILER_NODESTRUCTDECLARATORLIST_H
+
+
+class NodeStructDeclaratorList {
+
+};
+
+
+#endif //COMPILER_NODESTRUCTDECLARATORLIST_H
