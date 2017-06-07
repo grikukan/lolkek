@@ -24,6 +24,7 @@ friend NodeDeclSpecs *parseNodeDeclSpecs(ParserState &state) {
             added = true;
         }
         if (!added) break;
+        added = false;
     }
     if (result->storage_class_spec.empty() && result->type_spec.empty() && result->type_qualifier.empty()) {
         delete(result);

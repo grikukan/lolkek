@@ -6,8 +6,16 @@
 #define COMPILER_NODEENUMERATORLIST_H
 
 
-class NodeEnumeratorList {
+#include <vector>
+#include <algorithm>
+#include "NodeEnumerator.h"
+#include "ParserState.h"
 
+class NodeEnumeratorList {
+private:
+    std::vector<NodeEnumerator*> enumerator;
+public:
+    friend NodeEnumeratorList *parseNodeEnumeratorList(ParserState &state);
 };
 
 

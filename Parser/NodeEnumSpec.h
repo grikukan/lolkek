@@ -6,8 +6,16 @@
 #define COMPILER_NODEENUMSPEC_H
 
 
-class NodeEnumSpec {
+#include "NodeEnumeratorList.h"
+#include "ParserState.h"
 
+class NodeEnumSpec {
+private:
+    NodeEnumeratorList *enumerator_list;
+    std::string id;
+public:
+    NodeEnumSpec();
+    friend NodeEnumSpec *parseNodeEnumSpec(ParserState &state);
 };
 
 

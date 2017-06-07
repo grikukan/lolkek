@@ -6,8 +6,17 @@
 #define COMPILER_NODEINITDECLARATOR_H
 
 
-class NodeInitDeclarator {
+#include "NodeDeclarator.h"
+#include "NodeInitializer.h"
+#include "ParserState.h"
 
+class NodeInitDeclarator {
+private:
+    NodeDeclarator *declarator;
+    NodeInitializer *initializer;
+public:
+    NodeInitDeclarator();
+    friend NodeInitDeclarator *parseNodeInitDeclarator(ParserState &state);
 };
 
 

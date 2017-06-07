@@ -13,7 +13,7 @@
 
 class NodeInitDeclaratorList {
 private:
-    std::vector<NodeInitDeclarator*> child;
+    std::vector<NodeInitDeclarator*> init_declarator;
 public:
     friend NodeInitDeclaratorList *parseNodeInitDeclaratorList(ParserState &state);
 };

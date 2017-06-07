@@ -6,8 +6,17 @@
 #define COMPILER_NODESTRUCTDECL_H
 
 
-class NodeStructDecl {
+#include "NodeSpecQualifierList.h"
+#include "NodeStructDeclaratorList.h"
+#include "ParserState.h"
 
+class NodeStructDecl {
+private:
+    NodeSpecQualifierList *spec_qualifier_list;
+    NodeStructDeclaratorList *struct_declarator_list;
+public:
+    NodeStructDecl();
+    friend NodeStructDecl *parseNodeStructDecl(ParserState &state);
 };
 
 

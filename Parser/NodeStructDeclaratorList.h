@@ -6,8 +6,15 @@
 #define COMPILER_NODESTRUCTDECLARATORLIST_H
 
 
-class NodeStructDeclaratorList {
+#include <vector>
+#include "NodeStructDeclarator.h"
+#include "ParserState.h"
 
+class NodeStructDeclaratorList {
+private:
+    std::vector<NodeStructDeclarator*> struct_declarator;
+public:
+    friend NodeStructDeclaratorList *parseNodeStructDeclaratorList(ParserState &state);
 };
 
 

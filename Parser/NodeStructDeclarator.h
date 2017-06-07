@@ -6,8 +6,17 @@
 #define COMPILER_NODESTRUCTDECLARATOR_H
 
 
-class NodeStructDeclarator {
+#include "NodeDeclarator.h"
+#include "NodeConstExp.h"
+#include "ParserState.h"
 
+class NodeStructDeclarator {
+private:
+    NodeDeclarator *declarator;
+    NodeConstExp *constExp;
+public:
+    NodeStructDeclarator();
+    friend NodeStructDeclarator *parseNodeStructDeclarator(ParserState &state);
 };
 
 
