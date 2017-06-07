@@ -5,9 +5,14 @@
 #ifndef COMPILER_NODETYPEQUALIFIER_H
 #define COMPILER_NODETYPEQUALIFIER_H
 
+#include <string>
+#include "ParserState.h"
 
 class NodeTypeQualifier {
-
+private:
+    std::string value;
+public:
+    friend NodeTypeQualifier *parseNodeTypeQualifier(ParserState &state);
 };
 
 

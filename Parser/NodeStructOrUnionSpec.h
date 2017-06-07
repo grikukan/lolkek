@@ -6,8 +6,19 @@
 #define COMPILER_NODESTRUCTORUNIONSPEC_H
 
 
-class NodeStructOrUnionSpec {
+#include "NodeStructOrUnion.h"
+#include "NodeStructDeclList.h"
+#include "ParserState.h"
+#include <string>
 
+class NodeStructOrUnionSpec {
+private:
+    NodeStructOrUnion *struct_or_union;
+    std::string id;
+    NodeStructDeclList *struct_decl_list;
+    NodeStructOrUnionSpec();
+public:
+    friend NodeStructOrUnionSpec *parseNodeStructOrUnionSpec(ParserState &state);
 };
 
 

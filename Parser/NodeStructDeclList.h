@@ -6,8 +6,16 @@
 #define COMPILER_NODESTRUCTDECLLIST_H
 
 
-class NodeStructDeclList {
+#include <vector>
+#include <algorithm>
+#include "NodeStructDecl.h"
+#include "ParserState.h"
 
+class NodeStructDeclList {
+private:
+    std::vector<NodeStructDecl*> child;
+public:
+    friend NodeStructDeclList *parseNodeStructDeclList(ParserState &state);
 };
 
 

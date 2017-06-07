@@ -6,8 +6,21 @@
 #define COMPILER_NODETYPESPEC_H
 
 
-class NodeTypeSpec {
+#include "NodeStructOrUnionSpec.h"
+#include "NodeEnumSpec.h"
+#include "NodeTypedefName.h"
+#include "ParserState.h"
+#include <string>
 
+class NodeTypeSpec {
+private:
+    std::string value;
+    NodeStructOrUnionSpec *struct_or_union_spec;
+    NodeEnumSpec *enum_spec;
+    NodeTypedefName *typedef_name;
+    NodeTypeSpec();
+public:
+    friend NodeTypeSpec *parseNodeTypeSpec(ParserState &state);
 };
 
 

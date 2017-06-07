@@ -6,8 +6,16 @@
 #define COMPILER_NODEINITDECLARATORLIST_H
 
 
-class NodeInitDeclaratorList {
+#include <vector>
+#include <algorithm>
+#include "NodeInitDeclarator.h"
+#include "ParserState.h"
 
+class NodeInitDeclaratorList {
+private:
+    std::vector<NodeInitDeclarator*> child;
+public:
+    friend NodeInitDeclaratorList *parseNodeInitDeclaratorList(ParserState &state);
 };
 
 
