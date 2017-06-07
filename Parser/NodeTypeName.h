@@ -6,8 +6,16 @@
 #define COMPILER_NODETYPENAME_H
 
 
-class NodeTypeName {
+#include "NodeAbstractDeclarator.h"
+#include "NodeSpecQualifierList.h"
 
+class NodeTypeName {
+private:
+    NodeAbstractDeclarator *abstract_declarator;
+    NodeSpecQualifierList *spec_qualifier_list;
+public:
+    NodeTypeName();
+    friend NodeTypeName *parseNodeTypeName(ParserState &state);
 };
 
 

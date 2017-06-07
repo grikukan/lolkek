@@ -6,8 +6,13 @@
 #define COMPILER_NODETYPEQUALIFIERLIST_H
 
 
-class NodeTypeQualifierList {
+#include "NodeTypeQualifier.h"
 
+class NodeTypeQualifierList {
+private:
+    std::vector<NodeTypeQualifier*> type_qualifier;
+public:
+    friend NodeTypeQualifierList *parseNodeTypeQualifierList(ParserState &state);
 };
 
 

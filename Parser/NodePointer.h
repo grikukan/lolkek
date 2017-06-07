@@ -6,8 +6,16 @@
 #define COMPILER_NODEPOINTER_H
 
 
-class NodePointer {
+#include "NodeTypeQualifierList.h"
+#include "ParserState.h"
 
+class NodePointer {
+private:
+    size_t pointer_depth;
+    NodeTypeQualifierList *type_qualifier_list;
+public:
+    NodePointer();
+    friend NodePointer *parseNodePointer(ParserState &state);
 };
 
 

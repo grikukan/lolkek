@@ -6,8 +6,16 @@
 #define COMPILER_NODEPARAMTYPELIST_H
 
 
-class NodeParamTypeList {
+#include "NodeParamList.h"
+#include "ParserState.h"
 
+class NodeParamTypeList {
+private:
+    bool is_va_args;
+    NodeParamList *param_list;
+public:
+    NodeParamTypeList();
+    friend NodeParamTypeList *parseNodeParamTypeList(ParserState &state);
 };
 
 

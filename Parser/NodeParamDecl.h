@@ -6,8 +6,18 @@
 #define COMPILER_NODEPARAMDECL_H
 
 
-class NodeParamDecl {
+#include "NodeAbstractDeclarator.h"
+#include "NodeDeclarator.h"
+#include "NodeDeclSpecs.h"
 
+class NodeParamDecl {
+private:
+    NodeAbstractDeclarator *abstract_declarator;
+    NodeDeclarator *declarator;
+    NodeDeclSpecs *decl_specs;
+public:
+    NodeParamDecl();
+    friend NodeParamDecl *parseNodeparamDecl(ParserState &state);
 };
 
 

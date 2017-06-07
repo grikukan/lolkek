@@ -6,8 +6,13 @@
 #define COMPILER_NODEINITIALIZERLIST_H
 
 
-class NodeInitializerList {
+#include "NodeInitializer.h"
 
+class NodeInitializerList {
+private:
+    std::vector<NodeInitializer*> initializer;
+public:
+    friend NodeInitializerList *parseNodeInitializerList(ParserState &state);
 };
 
 

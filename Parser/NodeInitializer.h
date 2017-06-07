@@ -6,8 +6,18 @@
 #define COMPILER_NODEINITIALIZER_H
 
 
-class NodeInitializer {
+#include "NodeAssignmentExp.h"
+#include "NodeInitializerList.h"
+#include "ParserState.h"
 
+class NodeInitializer {
+private:
+    NodeAssignmentExp *assignment_exp;
+    NodeInitializerList *initializer_list;
+    bool have_dash;
+public:
+    NodeInitializer();
+    friend NodeInitializer *parseNodeInitializer(ParserState &state);
 };
 
 
